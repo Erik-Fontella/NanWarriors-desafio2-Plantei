@@ -1,5 +1,5 @@
-# Nan Warrios
-##### ![NanWarrios](https://img.shields.io/badge/NaN-Warriors-purple?style=plastic)
+# Nan Warriors
+##### ![NanWarriors](https://img.shields.io/badge/NaN-Warriors-purple?style=plastic)
 
 
 ## Índice
