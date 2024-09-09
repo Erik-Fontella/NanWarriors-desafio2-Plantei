@@ -1,0 +1,11 @@
+.carousel-container{
+    margin-left: 10rem;
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 4.8rem;
+    justify-content: center;
+    align-items: center;
+    height: 75.218rem;
+    max-width: 100%;
+    overflow: hidden;
+}
