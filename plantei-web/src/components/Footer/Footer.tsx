@@ -4,7 +4,7 @@ import ImgBgFooter from "@Assets/footer/footerBackground.png";
 
 const Footer = () => {
   return (
-    <footer>
+    <footer className="footer">
       <img className="footer-background" src={ImgBgFooter} alt="" />
       <div className="footer-container">
         <div className="footer-row">

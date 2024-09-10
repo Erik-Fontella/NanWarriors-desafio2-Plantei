@@ -1,8 +1,14 @@
+.footer {
+  position: relative;
+  background-color: #354733;
+}
+
 .footer-container {
+  position: relative;
+  z-index: 1;
   display: flex;
   flex-flow: column nowrap;
   justify-content: space-around;
-  background-color: #354733;
   color: #fff;
   height: 57.2rem;
   padding: 0px 10rem;
@@ -11,10 +17,12 @@
 .footer-background {
   opacity: 0.4;
   position: absolute;
-  z-index: 1;
-  height: 57.2rem;
+  top: 0;
+  left: 0;
   width: 100%;
-  overflow: none;
+  height: 100%;
+  z-index: 0;
+  object-fit: cover;
 }
 
 .footer-row {
