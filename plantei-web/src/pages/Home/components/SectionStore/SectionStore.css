@@ -1,0 +1,22 @@
+.section-store-container{
+   background-color: rgb(243, 243, 243);  /*cor provisoria*/
+   width: 100%;
+}
+
+.section-store-container > h2{
+    font-family: EB Garamond;
+    font-size: 6.4rem;
+    font-weight: 700;
+    line-height: 8.352rem;
+    text-align: center;
+    color: #354733;
+}
+
+.section-store-container > h2 > span{
+    font-family: EB Garamond;
+    font-size: 6.4rem;
+    font-weight: 700;
+    line-height: 8.352rem;
+    text-align: center;
+    color: #8A9B6E;
+}
