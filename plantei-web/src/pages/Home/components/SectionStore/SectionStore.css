@@ -1,6 +1,9 @@
 .section-store-container{
    background-color: rgb(243, 243, 243);  /*cor provisoria*/
    width: 100%;
+   display: flex;
+   flex-flow: column nowrap;
+   gap: 7rem;
 }
 
 .section-store-container > h2{
