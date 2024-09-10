@@ -6,7 +6,16 @@ import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css'; 
 
 
-const Carousel = () => {
+
+
+interface CarouselProps{
+  promo: boolean
+}
+
+
+
+
+const Carousel: React.FC<CarouselProps> = (props) => {
   const plants = [
     { name: "Echinocereus Cactus", price: "15.00", tag: "indoor" },
     { name: "Modern Picture", price: "15.00", tag: "indoor" },
@@ -41,6 +50,7 @@ const Carousel = () => {
                 key={index}
                 name={item.name} 
                 price={item.price} 
+                promo={props.promo}
                 tag={item.tag} 
               />
             </SplideSlide>

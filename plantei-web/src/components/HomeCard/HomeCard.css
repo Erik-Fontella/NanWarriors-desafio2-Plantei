@@ -44,15 +44,32 @@
     color: #354733;
 }
 
-.homecard-info > p{
+.homecard-info > div{
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 1.619rem;
+    align-items: flex-start;
+}
+
+.homecard-info > div > p:nth-child(1){
     font-family: Raleway;
     font-size: 1.6rem;
     font-weight: 400;
     line-height: 2.472rem;
     text-align: left;
     color: #354733;
-
     padding-bottom: 1.78rem;
+}
+
+
+.homecard-info > div > p:nth-child(2){
+    font-family: Raleway;
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 2.472rem;
+    text-align: left;
+    color: #AFB2AA;
+    text-decoration: line-through;
 }
 
 .homecard-info > span{

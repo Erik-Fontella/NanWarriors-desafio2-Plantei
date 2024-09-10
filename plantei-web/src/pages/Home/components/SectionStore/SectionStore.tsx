@@ -5,10 +5,10 @@ const SectionStore = () => {
   return (
     <section className="section-store-container">
         <h2>This Weeks Most Popular <span>And Best Selling</span></h2>
-        <Carousel/>
+        <Carousel promo={false}/>
 
         <h2>Plants <span>In Sale</span></h2>
-        <Carousel/>
+        <Carousel promo={true}/>
     </section>
   )
 }
