@@ -5,9 +5,8 @@
     gap: 4.8rem;
     justify-content: center;
     align-items: center;
-    height: 75.218rem;
     max-width: 100%;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 .carousel-content{
