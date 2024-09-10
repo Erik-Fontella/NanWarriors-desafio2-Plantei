@@ -13,7 +13,7 @@
   position: absolute;
   z-index: 1;
   height: 57.2rem;
-  width: 100vw;
+  width: 100%;
   overflow: none;
 }
 
@@ -23,6 +23,7 @@
   justify-content: space-between;
   align-items: flex-start;
   margin-top: 5rem;
+  max-width: 153,2rem;
 }
 
 .footer-info {
@@ -46,6 +47,7 @@
   display: flex;
   flex-flow: row nowrap;
   gap: 5.2rem;
+  margin-right: 3.8rem;
 }
 
 .footer-links {
@@ -82,7 +84,13 @@
     border-top: 1px solid #DDDEA0;
 }
 
-.footer-copryght > .footer-row > p {
+.footer-copryght > .footer-row > div {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 1rem;
+}
+
+.footer-copryght > .footer-row > div > p {
   font-family: Raleway;
   font-size: 1.6rem;
   font-weight: 300;

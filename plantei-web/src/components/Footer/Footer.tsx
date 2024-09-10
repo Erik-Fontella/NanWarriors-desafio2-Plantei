@@ -47,7 +47,10 @@ const Footer = () => {
         <div className="footer-copryght">
           <div className="footer-row">
             <img src={ImgLogo} alt="Logo plant peace" />
-            <p> Compassinhos ©. All rights <br/>reserved.</p>
+            <div>
+            <p> Compassinhos ©. All rights</p>
+            <p>reserved.</p>
+            </div>
           </div>
         </div>
       </div>
