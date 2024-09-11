@@ -1,14 +1,14 @@
-import Header from "@Components/Header/Header"
-import Home from "@Pages/Home/Home"
+import Header from "@Components/Header/Header";
+import Home from "@Pages/Home/Home";
+
 
 function App() {
-
   return (
     <>
-    <Header/>
-    <Home/>
+      <Header />
+      <Home />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
