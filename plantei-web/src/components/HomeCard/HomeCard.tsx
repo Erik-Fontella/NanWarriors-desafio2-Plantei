@@ -1,8 +1,9 @@
+import LabelTag from '@Components/LabelTag/LabelTag'
 import './HomeCard.css'
 import ImgPlant from "@Assets/home/img-plant.png"
 
 
-interface HomeCard{
+interface HomeCardProps{
     name: string,
     price: string,
     promo: boolean,
@@ -10,7 +11,7 @@ interface HomeCard{
 }
 
 
-const HomeCard: React.FC<HomeCard> = (props) => {
+const HomeCard: React.FC<HomeCardProps> = (props) => {
   return (
     <div className='homecard-container'>
         <img src={ImgPlant} alt="" />
@@ -20,7 +21,7 @@ const HomeCard: React.FC<HomeCard> = (props) => {
               <p>${props.price}</p>
               {props.promo && <p>$35.00</p>}
             </div>
-            <span>{props.tag}</span>
+            <LabelTag name={props.tag}/>
         </div>
     </div>
   )
