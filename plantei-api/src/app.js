@@ -20,7 +20,7 @@ class App{
     }
     // 
     connectDatabase() {
-        mongoose.connect('mongodb+srv://thays:oeYU1hzbTFeMeb5i@starwars-a.9npfc.mongodb.net/?retryWrites=true&w=majority&appName=starwars-a')
+        mongoose.connect('')
             .then(() => {
                 console.log('Connected to MongoDB');
             })
