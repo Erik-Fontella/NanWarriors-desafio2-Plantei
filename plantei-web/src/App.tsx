@@ -1,5 +1,7 @@
+
 import Footer from "@Components/Footer/Footer"
 import Home from "@Pages/Home/Home"
+import Register from "@Pages/Register/Register"
 
 function App() {
 
