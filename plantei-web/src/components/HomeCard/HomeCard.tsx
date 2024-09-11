@@ -5,6 +5,7 @@ import ImgPlant from "@Assets/home/img-plant.png"
 interface HomeCard{
     name: string,
     price: string,
+    promo: boolean,
     tag: string
 }
 
@@ -15,7 +16,10 @@ const HomeCard: React.FC<HomeCard> = (props) => {
         <img src={ImgPlant} alt="" />
         <div className='homecard-info'>
             <h4>{props.name}</h4>
-            <p>${props.price}</p>
+            <div>
+              <p>${props.price}</p>
+              {props.promo && <p>$35.00</p>}
+            </div>
             <span>{props.tag}</span>
         </div>
     </div>
