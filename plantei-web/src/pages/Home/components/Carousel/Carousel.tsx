@@ -5,15 +5,9 @@ import HomeCard from '@Components/HomeCard/HomeCard'
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css'; 
 
-
-
-
 interface CarouselProps{
   promo: boolean
 }
-
-
-
 
 const Carousel: React.FC<CarouselProps> = (props) => {
   const plants = [

@@ -1,8 +1,8 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Footer from "@Components/Footer/Footer";
-import Home from "@Pages/Home/Home";
+
 import Error from "@Pages/Error/Error";
+import Footer from "@Components/Footer/Footer"
+import Home from "@Pages/Home/Home"
+import Register from "@Pages/Register/Register"
 
 function App() {
   return (
@@ -17,3 +17,5 @@ function App() {
 }
 
 export default App;
+
+
