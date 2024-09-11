@@ -1,0 +1,100 @@
+#steps-to-take-care {
+    display: flex;
+    padding: 10rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8.2rem;
+    align-self: stretch;
+}
+
+.section-steps-title{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.6rem;
+    align-self: stretch;
+}
+
+.section-steps-title h2{
+    color: #354733;
+    text-align: center;
+    font-family: "EB Garamond";
+    font-size: 6.4rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: capitalize;
+}
+
+.section-steps-title span{
+    color: #8A9B6E;
+}
+
+.section-steps-title p {
+    width: 98rem;
+    letter-spacing: 0.008rem;
+}
+
+#steps-to-take-care ul{
+    list-style: none;
+}
+
+.steps-card-container{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 153.2rem;
+    width: 100%;
+}
+
+.steps-photos-container{
+    display: flex;
+    margin: 8rem 0rem;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 10.6rem;
+    flex-flow: row wrap;
+    max-width: 153.2rem;
+    width: 100%;
+}
+
+.steps-photos-container li{
+    height: 69.7rem;
+    width: 44rem;
+}
+
+.steps-photos-container img{
+    height: 100%;
+    opacity: 0.9;
+    overflow: hidden;
+}
+
+#steps-photo-with-text{
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-start;
+    gap: 3.2rem;
+    overflow: hidden;
+}
+
+#steps-photo-with-text p{
+    line-height: 2.787rem;
+    letter-spacing: 0.08px;
+    text-align: left;
+}
+
+#steps-photo-with-text > #steps-photo-container{
+    height: 17.2rem;
+    width: 100%;
+    overflow: hidden;
+}
+
+#steps-photo-with-text img{
+    width: 100%;
+    height: auto;
+    position: relative;
+    top: -25rem;
+}
