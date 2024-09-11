@@ -1,0 +1,28 @@
+.product-container{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 24.1rem 0;
+}
+.product-content{
+    width: 100%;
+    max-width: 153.5rem;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.product-content > img{
+    width: 75.2rem;
+    height: 69rem;
+    object-fit: cover;
+}
+
+@media (min-width: 0px) and (max-width: 767px) {
+    .product-content{
+        justify-content: center;
+        gap: 4rem;
+    }
+}
