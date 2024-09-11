@@ -1,4 +1,4 @@
-import '@Components/LoginButton/LoginButton.css';
+import './LoginButton.css';
 import {
   SignedIn,
   SignedOut,
