@@ -1,0 +1,28 @@
+nav {
+    display: flex;
+    justify-content: center;
+    max-width: 38.3rem;
+    width: 100%;
+}
+
+.li-header {
+    text-decoration: none;
+    color: #354733;
+    font-family: Raleway;
+    font-size: 1.6rem;
+}
+
+.li-header:hover {
+    color: #8A9B6E;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
