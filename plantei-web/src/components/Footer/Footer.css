@@ -66,14 +66,14 @@
   
 }
 
-.footer-links > ul {
+.footer-links > .ul-footer {
   list-style: none;
 }
 
-.footer-links > ul > li {
+.li-footer {
   margin-top: 1.6rem;
 }
-.footer-links > ul > li > a {
+.li-footer {
   text-decoration: none;
   color: #fff;
   font-family: Raleway;
