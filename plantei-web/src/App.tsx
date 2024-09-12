@@ -9,8 +9,8 @@ import { Route, Routes } from 'react-router';
 function App() {
   return (
     <>
-      <Header/>
       <BrowserRouter>
+      <Header/>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/register" element={<Register />} /> 
@@ -18,8 +18,8 @@ function App() {
           <Route path="/*" element={<Error />} /> 
           <Route path="/about-us" element={<Error/>} />
         </Routes>
-      </BrowserRouter>
       <Footer />
+      </BrowserRouter>
     </>
   );
 }

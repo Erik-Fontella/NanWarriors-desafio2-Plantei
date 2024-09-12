@@ -39,7 +39,7 @@ const Carousel: React.FC<CarouselProps> = (props) => {
           }}
         >
           {plants.map((item, index) => (
-            <SplideSlide>
+            <SplideSlide key={index}>
               <HomeCard 
                 key={index}
                 name={item.name} 
