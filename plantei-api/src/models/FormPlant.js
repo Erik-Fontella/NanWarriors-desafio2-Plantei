@@ -7,7 +7,11 @@ const PlantSchema = new Schema({
     subtitle: String,
     type: String,
     price: Number,
-    discountPercentage: Number,
+    discountPercentage: Number, discountPercentage: {
+        type: Number,
+        min: [0, 'O desconto não pode ser inferior a 0'],
+        max: [100, 'O desconto não pode ser superior a 100'],
+    },
     label: {
         type: String,
         enum: ['Indoor', 'Outdoor'],

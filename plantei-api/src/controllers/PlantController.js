@@ -62,7 +62,7 @@ class PlantController {
                 subtitle: plant.subtitle,
                 label: plant.label,
                 price: `R$ ${plant.price.toFixed(2)}`,
-                discountPercentage: plant.discountPercentage,
+                discountPercentage: `${plant.discountPercentage.toFixed(2)}%`,
                 isInSale: plant.isInSale,
                 features: plant.features,
                 description: plant.description,
