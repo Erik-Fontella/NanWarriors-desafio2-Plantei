@@ -9,4 +9,7 @@ const upload = multer (uploadConfig)
 
 routes.post('/plants', upload.single('imgPlant'), PlantController.store);
 
+routes.get('/plants', PlantController.index)
+
+
 export default routes

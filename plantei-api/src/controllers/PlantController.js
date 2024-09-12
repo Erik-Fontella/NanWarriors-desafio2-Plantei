@@ -28,6 +28,7 @@ class PlantController {
             description,
         } = req.body
 
+        // Verifica se um arquivo foi enviado e obtém o nome do arquivo da imagem
         const imgPlant = req.file ? req.file.filename : null;
 
         try {
@@ -40,9 +41,9 @@ class PlantController {
                 return res.status(400).json({ error: 'Falha na validação', details: validationError })
             }
 
+            // Cria a planta
             const plant = await FormPlant.create({
                 _id: plantId,
-                imgPlant,
                 name,
                 subtitle,
                 type,
@@ -51,15 +52,36 @@ class PlantController {
                 label,
                 features,
                 description,
+                imgPlant,
             })
-            return res.status(200).json(plant);
+
+            // Formata resposta 
+            const formattedPlant = {
+                id: plant._id,
+                name: plant.name,
+                subtitle: plant.subtitle,
+                label: plant.label,
+                price: `R$ ${plant.price.toFixed(2)}`,
+                discountPercentage: plant.discountPercentage,
+                isInSale: plant.isInSale,
+                features: plant.features,
+                description: plant.description,
+                imgUrl: plant.imgPlant,
+            };
+
+            return res.status(200).json({ plants: [formattedPlant] });
         }
         catch (err) {
-            console.error('Erro ao cadastrar a planta:', err); 
+            console.error('Erro ao cadastrar a planta:', err);
             return res.status(400).json({ error: 'Erro ao cadastrar a planta.', details: err.message });
         }
+    }
+    // Get
+    async index(req, res) {
+        const { status } = req.query
+        const plants = await FormPlant.find({ status })
 
-
+        return res.json(plants)
     }
 
 }

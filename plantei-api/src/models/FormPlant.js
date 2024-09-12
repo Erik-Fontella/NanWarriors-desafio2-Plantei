@@ -15,6 +15,7 @@ const PlantSchema = new Schema({
     },
     features: String,
     description: String,
+    isInSale: Boolean,
 }, {
 
     toJSON: {
@@ -22,5 +23,10 @@ const PlantSchema = new Schema({
 
     }
 })
+// Middleware para definir isInSale com base em discountPercentage
+PlantSchema.pre('save', function (next) {
+    this.isInSale = this.discountPercentage > 0;
+    next();
+});
 
 export default model('Plant', PlantSchema)

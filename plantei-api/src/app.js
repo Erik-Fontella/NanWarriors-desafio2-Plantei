@@ -9,9 +9,9 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-class App{
+class App {
 
-    constructor(){
+    constructor() {
 
         this.server = express()
         this.connectDatabase(); // Chama a função para conectar ao banco de dados
@@ -26,10 +26,10 @@ class App{
             })
             .catch(err => {
                 console.error('Connection error', err);
-                setTimeout(() => this.connectDatabase(), 5000); 
+                setTimeout(() => this.connectDatabase(), 5000);
             });
     }
-    middlewares(){
+    middlewares() {
         // qualquer dominio e pessoa fazer requisição na api
         this.server.use(cors())
 
@@ -43,7 +43,6 @@ class App{
     routes() {
         this.server.use(routes);
     }
-
 
 }
 export default new App().server

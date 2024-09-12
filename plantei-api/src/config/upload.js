@@ -10,7 +10,6 @@ const __dirname = path.dirname(__filename);
 export default {
     storage: multer.diskStorage({
         destination: path.resolve(__dirname, '../../uploads'),
-        // destination: path.resolve(__dirname, '../../../plantei-web/src/assets/uploads'),
         filename: (req, file, cb) => {
             const ext = path.extname(file.originalname);
             const name = path.basename(file.originalname, ext);
