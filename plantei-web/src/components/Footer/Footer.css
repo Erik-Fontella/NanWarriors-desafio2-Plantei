@@ -31,7 +31,8 @@
   justify-content: space-between;
   align-items: flex-start;
   margin-top: 5rem;
-  max-width: 153.2rem;
+  width: 100%;
+  max-width: 153,2rem;
 }
 
 .footer-info {
@@ -89,17 +90,17 @@
 }
 
 
-.footer-copryght {
+.footer-copyright {
     border-top: 1px solid #DDDEA0;
 }
 
-.footer-copryght > .footer-row > div {
+.footer-copyright > .footer-row > div {
   display: flex;
   flex-flow: column nowrap;
   gap: 1rem;
 }
 
-.footer-copryght > .footer-row > div > p {
+.footer-copyright > .footer-row > div > p {
   font-family: Raleway;
   font-size: 1.6rem;
   font-weight: 300;

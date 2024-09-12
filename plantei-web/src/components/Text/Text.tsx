@@ -5,7 +5,7 @@ interface Text{
 }
 
 const Text: React.FC<Text> = (props) => {
-    return <p>{props.text}</p>
+    return <p className="text-container">{props.text}</p>
 }
 
 export default Text

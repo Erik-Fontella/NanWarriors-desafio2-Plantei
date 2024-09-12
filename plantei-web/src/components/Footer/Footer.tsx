@@ -44,7 +44,7 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="footer-copryght">
+        <div className="footer-copyright">
           <div className="footer-row">
             <img src={ImgLogo} alt="Logo plant peace" />
             <div>
