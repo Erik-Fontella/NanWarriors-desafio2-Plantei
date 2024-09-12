@@ -1,26 +1,41 @@
 import Error from "@Pages/Error/Error";
-import Footer from "@Components/Footer/Footer"
-import Home from "@Pages/Home/Home"
-import Register from "@Pages/Register/Register"
+import Footer from "@Components/Footer/Footer";
+import Home from "@Pages/Home/Home";
+import Register from "@Pages/Register/Register";
 import Header from "@Components/Header/Header";
 import { BrowserRouter } from 'react-router-dom';
 import { Route, Routes } from 'react-router';
+import { ClerkProvider, SignIn } from '@clerk/clerk-react'; // Adicionando Clerk
+import PrivateRoute from "@Routes/PrivateRoute"; // Importando PrivateRoute
+import SignInPage from "@Components/SignIn/SignIn";
 
+const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
 function App() {
+  const clerkFrontendApi = PUBLISHABLE_KEY; // Substitua pelo seu Frontend API do Clerk
+
   return (
-    <>
+    <ClerkProvider publishableKey={clerkFrontendApi}>
       <BrowserRouter>
-      <Header/>
+        <Header />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/register" element={<Register />} /> 
-          <Route path="/products" element={<Error />} /> 
-          <Route path="/*" element={<Error />} /> 
-          <Route path="/about-us" element={<Error/>} />
+          {/* Protegendo a rota /register */}
+          <Route
+            path="/register"
+            element={
+              <PrivateRoute>
+                <Register />
+              </PrivateRoute>
+            }
+          />
+          <Route path="/products" element={<Error />} />
+          <Route path="/about-us" element={<Error />} />
+          <Route path="/*" element={<Error />} />
+          <Route path="/sign-in" element={<SignInPage />} /> {/* Rota de login do Clerk */}
         </Routes>
-      <Footer />
+        <Footer />
       </BrowserRouter>
-    </>
+    </ClerkProvider>
   );
 }
 
