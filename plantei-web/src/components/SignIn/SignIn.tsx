@@ -1,6 +1,5 @@
-import React from 'react';
-import { SignIn } from '@clerk/clerk-react';
-import './SignIn.css';
+import { SignIn } from "@clerk/clerk-react";
+import "./SignIn.css";
 
 const SignInPage = () => {
   return (
