@@ -15,7 +15,14 @@ const LoginButton = () => {
         </SignInButton>
       </SignedOut>
       <SignedIn>
-        <UserButton />
+      <UserButton appearance={{
+  elements: {
+    userButtonAvatarBox: {
+      width: '2.6rem',
+      height: '2.6rem',
+    },
+  },
+}} />
       </SignedIn>
     </div>
   );
