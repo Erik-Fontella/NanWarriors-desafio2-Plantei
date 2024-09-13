@@ -132,7 +132,7 @@ export function CreatePlantDialog() {
     </div>
 
     <div className="image-container">
-      <img src="src\assets\register\image 23.png" alt="Plant" className="plant-image" />
+      
     </div>
   </div>
  
