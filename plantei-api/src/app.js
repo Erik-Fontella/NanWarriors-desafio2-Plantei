@@ -3,6 +3,7 @@ import routes from './routes/routes.js';
 import mongoose from 'mongoose';
 import path from 'path';
 import cors from 'cors'
+import 'dotenv/config'; 
 
 import { fileURLToPath } from 'url';
 
@@ -18,9 +19,13 @@ class App {
         this.middlewares();     // Configura os middlewares
         this.routes();          // Configura as rotas
     }
-    // 
+
     connectDatabase() {
-        mongoose.connect('')
+        const { MONGO_USER, MONGO_PASSWORD, MONGO_HOST, MONGO_DB, MONGO_OPTIONS } = process.env;
+
+        const uri = `mongodb+srv://${MONGO_USER}:${MONGO_PASSWORD}@${MONGO_HOST}/${MONGO_DB}?${MONGO_OPTIONS}`;
+
+        mongoose.connect(uri)
             .then(() => {
                 console.log('Connected to MongoDB');
             })
