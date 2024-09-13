@@ -1,4 +1,4 @@
-nav {
+.header-nav {
     display: flex;
     justify-content: center;
     max-width: 38.3rem;
@@ -16,7 +16,7 @@ nav {
     color: #8A9B6E;
 }
 
-nav ul {
+.header-ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -25,4 +25,3 @@ nav ul {
     justify-content: space-evenly;
     width: 100%;
 }
-

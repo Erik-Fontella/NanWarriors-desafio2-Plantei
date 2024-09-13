@@ -14,7 +14,9 @@ const Header = () => {
           </Link>
         </div>
         <NavBar />
+        <div className="header-login-button">
         <LoginButton />
+        </div>
       </div>
     </header>
   );

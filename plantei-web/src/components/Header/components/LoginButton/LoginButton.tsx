@@ -11,7 +11,7 @@ const LoginButton = () => {
     <div className='login-button'>
       <SignedOut>
         <SignInButton>
-        <button className="custom-signin-button">Sign In</button>
+        <button className="custom-signin-button">SignIn</button>
         </SignInButton>
       </SignedOut>
       <SignedIn>
