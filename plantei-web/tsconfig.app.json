@@ -13,6 +13,7 @@
     "paths": {
       "@Assets/*": ["src/assets/*"],
       "@Components/*": ["src/components/*"],
+      "@Types/*": ["src/types/*"],
       "@Pages/*": ["src/pages/*"],
       "@Routes/*": ["src/routes/*"]
     },

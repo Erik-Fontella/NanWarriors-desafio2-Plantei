@@ -9,10 +9,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 7.39rem;
+    min-width: 7.39rem;
     padding: 0.648rem 1.295rem 0.648rem 1.295rem;
     border-radius: 1.943rem;
-
     color: #8A9B6E;
     border: 0.162rem solid #8A9B6E
 }
