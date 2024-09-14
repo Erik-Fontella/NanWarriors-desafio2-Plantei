@@ -16,11 +16,19 @@
     max-width: 163.2rem;
 }
 
+.carousel-content > p{
+    text-align: center;
+    margin-left: -5.75rem;
+    font-size: 3rem;
+}
 
 @media (min-width: 0px) and (max-width: 767px) {
     .carousel-container{
         margin-left: 0;
         padding: 10%;
+    }
+    .carousel-content > p{
+        margin-left: 0;
     }
 }
 
@@ -28,5 +36,9 @@
     .carousel-container{
         margin-left: 0;
         padding: 5%;
+    }
+
+    .carousel-content > p{
+        margin-left: 0;
     }
 }

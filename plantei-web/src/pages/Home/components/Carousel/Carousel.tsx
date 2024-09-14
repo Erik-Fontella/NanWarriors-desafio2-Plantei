@@ -15,7 +15,9 @@ const Carousel: React.FC<CarouselProps> = (props) => {
   return (
     <div className="carousel-container">
       <div className="carousel-content">
-        <Splide
+
+        {props.plants.length > 0 ? (
+          <Splide
           options={{
             perPage: 4, 
             perMove: 1,
@@ -45,6 +47,8 @@ const Carousel: React.FC<CarouselProps> = (props) => {
             </SplideSlide>
           ))}
         </Splide>
+        ) : <p>No plants registered.</p>}
+
       </div>
     </div>
   )
