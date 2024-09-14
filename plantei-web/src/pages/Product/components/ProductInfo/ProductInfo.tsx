@@ -1,26 +1,46 @@
+import { Plant } from '@Types/Plant'
 import './ProductInfo.css'
 import LabelTag from '@Components/LabelTag/LabelTag'
 
-const ProductInfo = () => {
+interface ProductInfoProps{
+  plant: Plant | null
+}
+
+const ProductInfo: React.FC<ProductInfoProps> = (props) => {
+
+  const formatFeaturesToList = (text: string | undefined): string[] => {
+    if (!text) {
+      return [];
+    }
+    const lines = text.split('.');
+
+    const formattedLines = lines
+      .filter(line => line.trim() !== '') 
+      .map(line => line.trim() + '.');
+
+    return formattedLines;
+  }
+
+  const productFeatures = formatFeaturesToList(props.plant?.features)
+
   return (
     <div className='product-info'>
-        <h2>Echinocereus Cactus</h2>
-        <h3>A Majestic Addition to Your Plant Collection</h3>
+        <h2>{props.plant?.name}</h2>
+        <h3>{props.plant?.subtitle}</h3>
         <div>
-          <LabelTag name='indoor'/>
-          <LabelTag name='cactus'/>
+          {props.plant && <LabelTag name={props.plant.label}/>}
+          {props.plant && <LabelTag name={props.plant.type}/>}
         </div>
-        <h4>$139.99</h4>
+        <h4>${props.plant?.price}</h4>
         <button>Check out</button>
         <h5>Features</h5>
         <ul>
-          <li>Species: Echinocereus spp.</li>
-          <li>Mature Size: Varies by species, typically ranging from 4 to 12 inches (10-30 cm) in height.</li>
-          <li>Blooming Season: Typically spring or summer, with flowers lasting several days to weeks.</li>
-          <li>Pot Size: Available in various pot sizes to suit your preference and needs.</li>
+          {productFeatures.map((item) => (
+            <li>{item}</li>
+          ))}
         </ul>
         <h5>Description</h5>
-        <p>Ladyfinger cactus (*Echinocereus pentalophus*) is also known as Alice, Devil's Fingers, and Dog Tail. It needs bright sunlight, light fertilizer, and is prone to root rot. The root system is shallow and weak. Aphids and mealybugs are also a danger. Avoiding wet soil can help with success with a ladyfinger cactus.</p>
+        <p>{props.plant?.description}</p>
     </div>
   )
 }

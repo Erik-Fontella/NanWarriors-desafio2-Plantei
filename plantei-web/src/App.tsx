@@ -8,6 +8,7 @@ import { Route, Routes } from "react-router";
 import { ClerkProvider} from "@clerk/clerk-react";
 import PrivateRoute from "@Routes/PrivateRoute";
 import SignInPage from "@Components/SignIn/SignIn";
+import Product from "@Pages/Product/Product";
 
 const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
 function App() {
@@ -29,6 +30,7 @@ function App() {
             }
           />
           <Route path="/products" element={<Error />} />
+          <Route path="/product/:id" element={<Product />} />
           <Route path="/about-us" element={<Error />} />
           <Route path="/*" element={<Error />} />
           <Route path="/sign-in" element={<SignInPage />} />
