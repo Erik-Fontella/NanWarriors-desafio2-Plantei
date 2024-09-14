@@ -33,7 +33,7 @@ const HomeCard: React.FC<HomeCardProps> = (props) => {
             </div>
             <div>
             <LabelTag name={props.label}/>
-            <LabelTag name={props.type}/>
+            {props.type && <LabelTag name={props.type}/>}
             </div>
         </div>
     </div>
