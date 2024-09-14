@@ -7,14 +7,16 @@ import { Plant } from "@Types/Plant";
 
 const Home = () => {   
   const [plants, setPlants] = useState<Plant[]>([]);
+  const [status, setStatus] = useState<string>('');
   useEffect(() => {
     const fetchPlants = async () => {
       try {
+        setStatus('Loading...');
         const response = await axios.get('http://localhost:3333/plants');
         setPlants(response.data);
-        console.log(response.data);
       } catch (err) {
-        console.log(err);
+        setStatus("We couldn't find the data at this time. Please try again later.")
+        console.log(err)
       }
     };
 
@@ -24,7 +26,7 @@ const Home = () => {
   return (
     <div className="home-container">
         <HomeSteps/>
-        <SectionStore plants={plants}/>
+        <SectionStore plants={plants} status={status}/>
     </div>
   )
 }

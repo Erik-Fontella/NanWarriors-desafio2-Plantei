@@ -5,10 +5,12 @@ import HomeCard from '@Components/HomeCard/HomeCard'
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css'; 
 import { Plant } from "@Types/Plant";
+import { Link } from "react-router-dom";
 
 interface CarouselProps{
   plants: Plant[],
-  promo: boolean
+  promo: boolean,
+  status: string
 }
 
 const Carousel: React.FC<CarouselProps> = (props) => {
@@ -36,18 +38,18 @@ const Carousel: React.FC<CarouselProps> = (props) => {
         >
           {props.plants.map((item, index) => (
             <SplideSlide key={index}>
-              <HomeCard 
+              <Link to={`/product/${item._id}`}><HomeCard 
                 key={item._id}
                 name={item.name} 
                 price={item.price} 
                 discount={item.discountPercentage}
                 label={item.label} 
                 type={item.type} 
-              />
+              /></Link>
             </SplideSlide>
           ))}
         </Splide>
-        ) : <p>No plants registered.</p>}
+        ) : <p>{props.status}</p>}
 
       </div>
     </div>
