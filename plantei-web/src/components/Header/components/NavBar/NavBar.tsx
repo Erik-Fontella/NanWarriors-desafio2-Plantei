@@ -1,14 +1,24 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import "./NavBar.css";
 
 const NavBar = () => {
+  const location = useLocation();
+  
   return (
-    <nav>
-      <ul className="ul-header">
-        <Link to="/"><li className="li-header">Home</li></Link>
-        <Link to="/register"><li className="li-header">Register</li></Link>
-        <Link to="/products"><li className="li-header">Products</li></Link>
-        <Link to="/about-us"><li className="li-header">About us</li></Link>
+    <nav className="header-nav">
+      <ul className="header-ul">
+        <li className="li-header">
+          <Link to="/" className={location.pathname === '/' ? 'active' : ''}>Home</Link>
+        </li>
+        <li className="li-header">
+          <Link to="/register" className={location.pathname === '/register' ? 'active' : ''}>Register</Link>
+        </li>
+        <li className="li-header">
+          <Link to="/products" className={location.pathname === '/products' ? 'active' : ''}>Products</Link>
+        </li>
+        <li className="li-header">
+          <Link to="/about-us" className={location.pathname === '/about-us' ? 'active' : ''}>About us</Link>
+        </li>
       </ul>
     </nav>
   );

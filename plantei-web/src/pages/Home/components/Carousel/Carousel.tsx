@@ -4,24 +4,22 @@ import HomeCard from '@Components/HomeCard/HomeCard'
 // @ts-expect-error A biblioteca SplideJS apresenta erro por conta do Typescript, mas funciona normalmente
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css'; 
+import { Plant } from "@Types/Plant";
+import { Link } from "react-router-dom";
 
 interface CarouselProps{
-  promo: boolean
+  plants: Plant[],
+  promo: boolean,
+  status: string
 }
 
 const Carousel: React.FC<CarouselProps> = (props) => {
-  const plants = [
-    { name: "Echinocereus Cactus", price: "15.00", tag: "indoor" },
-    { name: "Modern Picture", price: "15.00", tag: "indoor" },
-    { name: "Modern Picture", price: "15.00", tag: "outdoor" },
-    { name: "Modern Picture", price: "15.00", tag: "Label" }
-  ];
-
-
   return (
     <div className="carousel-container">
       <div className="carousel-content">
-        <Splide
+
+        {props.plants.length > 0 ? (
+          <Splide
           options={{
             perPage: 4, 
             perMove: 1,
@@ -38,18 +36,21 @@ const Carousel: React.FC<CarouselProps> = (props) => {
             },
           }}
         >
-          {plants.map((item, index) => (
+          {props.plants.map((item, index) => (
             <SplideSlide key={index}>
-              <HomeCard 
-                key={index}
+              <Link to={`/product/${item._id}`}><HomeCard 
+                key={item._id}
                 name={item.name} 
                 price={item.price} 
-                promo={props.promo}
-                tag={item.tag} 
-              />
+                discount={item.discountPercentage}
+                label={item.label} 
+                type={item.type} 
+              /></Link>
             </SplideSlide>
           ))}
         </Splide>
+        ) : <p>{props.status}</p>}
+
       </div>
     </div>
   )

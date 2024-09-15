@@ -3,6 +3,7 @@ import routes from './routes/routes.js';
 import mongoose from 'mongoose';
 import path from 'path';
 import cors from 'cors'
+import 'dotenv/config'; 
 
 import { fileURLToPath } from 'url';
 
@@ -14,13 +15,17 @@ class App {
     constructor() {
 
         this.server = express()
-        this.connectDatabase(); // Chama a função para conectar ao banco de dados
-        this.middlewares();     // Configura os middlewares
-        this.routes();          // Configura as rotas
+        this.connectDatabase(); // Calls the function to connect to the database
+        this.middlewares();     // Configure the middleware
+        this.routes();          // Configure the routes
     }
-    // 
+
     connectDatabase() {
-        mongoose.connect('')
+        const { MONGO_USER, MONGO_PASSWORD, MONGO_HOST, MONGO_DB, MONGO_OPTIONS } = process.env;
+
+        const uri = `mongodb+srv://${MONGO_USER}:${MONGO_PASSWORD}@${MONGO_HOST}/${MONGO_DB}?${MONGO_OPTIONS}`;
+
+        mongoose.connect(uri)
             .then(() => {
                 console.log('Connected to MongoDB');
             })
@@ -30,7 +35,7 @@ class App {
             });
     }
     middlewares() {
-        // qualquer dominio e pessoa fazer requisição na api
+        // Any domain and person make a request to the api
         this.server.use(cors())
 
         this.server.use(

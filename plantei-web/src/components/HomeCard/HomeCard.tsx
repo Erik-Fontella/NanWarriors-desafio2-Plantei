@@ -5,23 +5,36 @@ import ImgPlant from "@Assets/home/img-plant.png"
 
 interface HomeCardProps{
     name: string,
-    price: string,
-    promo: boolean,
-    tag: string
+    price: number,
+    discount: number,
+    label: string,
+    type: string
 }
 
-
 const HomeCard: React.FC<HomeCardProps> = (props) => {
+
+  const handlePrice = (price: number, discount: number) => {
+    return (price * (1 - (discount/100)))
+  }
+
   return (
     <div className='homecard-container'>
         <img src={ImgPlant} alt="" />
         <div className='homecard-info'>
             <h4>{props.name}</h4>
             <div>
-              <p>${props.price}</p>
-              {props.promo && <p>$35.00</p>}
+              {props.discount > 0 ? (
+                <p>${handlePrice(props.price, props.discount)}</p>
+              ) : (
+                <p>${props.price}</p>
+              )}
+
+              {props.discount > 0 && <p>${props.price}</p>}
             </div>
-            <LabelTag name={props.tag}/>
+            <div>
+            <LabelTag name={props.label}/>
+            {props.type && <LabelTag name={props.type}/>}
+            </div>
         </div>
     </div>
   )

@@ -9,8 +9,8 @@ const PlantSchema = new Schema({
     price: Number,
     discountPercentage: Number, discountPercentage: {
         type: Number,
-        min: [0, 'O desconto não pode ser inferior a 0'],
-        max: [100, 'O desconto não pode ser superior a 100'],
+        min: [0, 'Discount cannot be less than 0'],
+        max: [100, 'The discount cannot be greater than 100'],
     },
     label: {
         type: String,
@@ -27,7 +27,7 @@ const PlantSchema = new Schema({
 
     }
 })
-// Middleware para definir isInSale com base em discountPercentage
+// Middleware to set isInSale based on discountPercentage
 PlantSchema.pre('save', function (next) {
     this.isInSale = this.discountPercentage > 0;
     next();
