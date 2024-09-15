@@ -10,4 +10,4 @@ export interface Plant {
     features: string,
     description: string,
     isInSale: boolean,
-  }
+}

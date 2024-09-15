@@ -1,31 +1,54 @@
 import './Product.css'
 import ImgPlant from "@Assets/home/img-plant.png"
 import ProductInfo from './components/ProductInfo/ProductInfo'
+import { useEffect, useState } from 'react';
+import axios from 'axios';
+import { Plant } from '@Types/Plant';
+import { useNavigate, useParams } from "react-router-dom";
 
-/*imgUrl: string*/
-/*
-interface ProductProps{
-  id: number,
-  name: string,
-  subtitle: string,
-  label: string[],
-  price: string,
-  isInSale: boolean,
-  discountPercentage: 20,
-  features: string,
-  description: string,
-}
-const Product: React.FC<ProductProps> = (props) => {
-*/
 const Product = () => {
+  const { id } = useParams<{ id: string }>();
+  const [plant, setPlant] = useState<Plant | null>(null);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const fetchPlants = async () => {
+      try {
+        const response = await axios.get('http://localhost:3333/plants');
+        if (id) {
+          const foundPlant = response.data.find((item: Plant) => item._id === Number(id));
+          setPlant(foundPlant || null);
+        } else {
+          setPlant(null);
+        }
+        setIsLoading(false);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+
+    fetchPlants();
+  }, [id]);
+
+  useEffect(() => {
+    if (!isLoading && plant === null) {
+      navigate('/error');
+    }
+  }, [isLoading, plant, navigate]);
+
   return (
     <section className='product-container'>
-      <div className='product-content'>
+      {isLoading ? (
+        <p className='product-loading'>Loading...</p>
+      ) : (
+        <div className='product-content'>
           <img src={ImgPlant} alt="" />
-          <ProductInfo/>
-      </div>
+          {plant && <ProductInfo plant={plant} />}
+        </div>
+      )}
     </section>
-  )
+  );
 }
 
-export default Product
+export default Product;
