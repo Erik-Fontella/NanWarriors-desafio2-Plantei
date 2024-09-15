@@ -22,6 +22,12 @@
     object-fit: cover;
 }
 
+.product-loading{
+    font-size: 3rem;
+    height: 40rem;
+    margin: 0 auto;
+}
+
 @media (min-width: 0px) and (max-width: 767px) {
     
     .product-container{
