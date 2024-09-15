@@ -9,6 +9,7 @@ import { ClerkProvider} from "@clerk/clerk-react";
 import PrivateRoute from "@Routes/PrivateRoute";
 import SignInPage from "@Components/SignIn/SignIn";
 import Product from "@Pages/Product/Product";
+import ScrollToTop from "@Components/ScrollToTop/ScrollToTop";
 
 const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
 function App() {
@@ -17,6 +18,7 @@ function App() {
   return (
     <ClerkProvider publishableKey={clerkFrontendApi}>
       <BrowserRouter>
+        <ScrollToTop/>
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />

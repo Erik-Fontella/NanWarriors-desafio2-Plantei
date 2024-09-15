@@ -15,9 +15,9 @@ class App {
     constructor() {
 
         this.server = express()
-        this.connectDatabase(); // Chama a função para conectar ao banco de dados
-        this.middlewares();     // Configura os middlewares
-        this.routes();          // Configura as rotas
+        this.connectDatabase(); // Calls the function to connect to the database
+        this.middlewares();     // Configure the middleware
+        this.routes();          // Configure the routes
     }
 
     connectDatabase() {
@@ -35,7 +35,7 @@ class App {
             });
     }
     middlewares() {
-        // qualquer dominio e pessoa fazer requisição na api
+        // Any domain and person make a request to the api
         this.server.use(cors())
 
         this.server.use(
