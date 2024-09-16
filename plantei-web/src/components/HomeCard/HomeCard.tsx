@@ -21,7 +21,7 @@ const HomeCard: React.FC<HomeCardProps> = (props) => {
   return (
     <div className='homecard-container'>
       <Link to={`/product/${props.id}`}>
-        <img src={ImgPlant} alt="" />
+        <img src={ImgPlant} alt="" id='img-homecard'/>
         <div className='homecard-info'>
             <h4>{props.name}</h4>
             <div>
