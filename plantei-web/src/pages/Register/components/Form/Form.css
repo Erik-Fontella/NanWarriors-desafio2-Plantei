@@ -11,6 +11,29 @@
   font-weight: 500;
 }
 
+.error .plant-form-input, 
+.error .plant-form-textarea {
+  border-color: red;
+}
+
+.error-message {
+  color: red;
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+}
+
+.message.success {
+  color: green;
+  font-size: 1.6rem;
+  margin-top: 1.6rem;
+}
+
+.message.error {
+  color: red;
+  font-size: 1.6rem;
+  margin-top: 1.6rem;
+}
+
 .plant-form {
   display: flex;
   flex-direction: column;
@@ -32,7 +55,7 @@
   display: flex;
   flex-direction: column;
   flex: 1;
-  
+  font-size: 1.8rem;
 }
 
 .plant-form-title {
@@ -41,7 +64,7 @@
   color: #354733;
 }
 
-#plantTitle {
+#name {
   font-size: 1.8rem;
   margin-top: 3.6rem;
 }
@@ -56,12 +79,12 @@
   background-color: transparent;
 }
 
-#plantSubtitle {
+#subtitle {
   margin-top: 2.4rem;
   font-size: 1.8rem;
 }
 
-#plantType {
+#type {
   margin-top: 3.6rem;
   font-size: 1.8rem;
 }
@@ -173,7 +196,7 @@
   height: 134.5rem;
   filter: grayscale(100%) brightness(100%);
   transition: 0.3s ease;
-  box-shadow: 0px 0.648rem 0.2rem 0.2rem #29292914
+  box-shadow: 0px 0.648rem 0.2rem 0.2rem #29292914;
 }
 
 .image-container:hover {
