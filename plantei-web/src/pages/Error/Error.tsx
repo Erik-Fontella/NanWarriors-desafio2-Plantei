@@ -13,7 +13,7 @@ const Error = () => {
     <div className="error-container">
       <div className="error-overlay"></div>
       <div className="error-content">
-        <h1 className="error-message">Opps! Não encontramos essa página</h1>
+        <h1 className="error-messagee">Opps! Não encontramos essa página</h1>
         <button className="error-button" onClick={voltar}>
           Voltar
         </button>
