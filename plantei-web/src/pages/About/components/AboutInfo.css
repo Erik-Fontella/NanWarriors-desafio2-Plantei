@@ -1,8 +1,10 @@
-.container {
+.about-info-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     gap: 20px;
+    max-width: 90.3rem;
+    width: 100%;
   }
   
   .card {
@@ -16,11 +18,17 @@
   }
   
   .card-image {
-    width: 100px;
-    height: 100px;
+    width: 10rem;
+    height: 10rem;
     border-radius: 50%;
     object-fit: cover;
     margin-bottom: 12px;
+  }
+
+  .bio-about {
+    font-family: Raleway;
+    font-size: 1.4rem;
+    margin-top: 1rem;
   }
   
   .card-links {
@@ -30,7 +38,7 @@
   }
   
   .card-links a {
-    color: #0073b1;
+    color: #8A9B6E;
     text-decoration: none;
     font-weight: bold;
   }
@@ -38,4 +46,22 @@
   .card-links a:hover {
     text-decoration: underline;
   }
+
+  @media (min-width: 0px) and (max-width: 767px) {
+    .about-info-container {
+      flex-direction: column;
+      overflow: hidden;
+    }
   
+    .card {
+      width: 100%;
+    }
+
+  }
+  
+  @media (min-width: 768px) and (max-width: 1024px) {
+  
+    .card {
+      width: 100%;
+    }
+  }
