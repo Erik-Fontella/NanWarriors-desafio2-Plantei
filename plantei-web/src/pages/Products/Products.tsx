@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import './Products.css'
 import axios from 'axios';
 import { Plant } from '@Types/Plant';
-import { Link } from 'react-router-dom';
 import HomeCard from '@Components/HomeCard/HomeCard';
 
 const Products = () => {
@@ -29,14 +28,15 @@ const Products = () => {
         <div className='products-gallery'>
             {plants.length > 0 ? (
                 plants.map((item) => (
-                    <Link to={`/product/${item._id}`} key={item._id}><HomeCard 
+                    <HomeCard 
                         key={item._id}
+                        id={item._id}
                         name={item.name} 
                         price={item.price} 
                         discount={item.discountPercentage}
                         label={item.label} 
                         type={item.type} 
-                    /></Link>
+                    />
                 ))
             ) : <p>{status}</p>}
         </div>

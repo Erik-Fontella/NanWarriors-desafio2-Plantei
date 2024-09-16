@@ -1,14 +1,15 @@
 import LabelTag from '@Components/LabelTag/LabelTag'
 import './HomeCard.css'
 import ImgPlant from "@Assets/home/img-plant.png"
-
+import { Link } from "react-router-dom";
 
 interface HomeCardProps{
-    name: string,
-    price: number,
-    discount: number,
-    label: string,
-    type: string
+  id: number,
+  name: string,
+  price: number,
+  discount: number,
+  label: string,
+  type: string
 }
 
 const HomeCard: React.FC<HomeCardProps> = (props) => {
@@ -19,6 +20,7 @@ const HomeCard: React.FC<HomeCardProps> = (props) => {
 
   return (
     <div className='homecard-container'>
+      <Link to={`/plant/${props.id}`}>
         <img src={ImgPlant} alt="" />
         <div className='homecard-info'>
             <h4>{props.name}</h4>
@@ -36,6 +38,7 @@ const HomeCard: React.FC<HomeCardProps> = (props) => {
             {props.type && <LabelTag name={props.type}/>}
             </div>
         </div>
+      </Link>
     </div>
   )
 }
