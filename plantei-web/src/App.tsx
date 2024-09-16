@@ -11,6 +11,7 @@ import SignInPage from "@Components/SignIn/SignIn";
 import Product from "@Pages/Product/Product";
 import ScrollToTop from "@Components/ScrollToTop/ScrollToTop";
 import Products from "@Pages/Products/Products";
+import About from"@Pages/About/About";
 
 const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
 function App() {
@@ -34,7 +35,7 @@ function App() {
           />
           <Route path="/products" element={<Products />} />
           <Route path="/product/:id" element={<Product />} />
-          <Route path="/about-us" element={<Error />} />
+          <Route path="/about-us" element={<About />} />
           <Route path="/*" element={<Error />} />
           <Route path="/sign-in" element={<SignInPage />} />
         </Routes>
