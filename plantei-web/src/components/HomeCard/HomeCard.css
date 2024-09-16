@@ -14,7 +14,7 @@
     transform: scale(0.95);
 }
 
-.homecard-container > img{
+#img-homecard{
     width: 38.9rem;
     height: 38.8rem;
     opacity: 0.09rem;

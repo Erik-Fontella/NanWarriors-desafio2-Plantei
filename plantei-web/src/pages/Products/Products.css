@@ -3,6 +3,7 @@
     flex-flow: column wrap;
     align-items: center;
     padding: 10rem 0;
+    gap: 10rem;
 }
 
 .products-gallery{
@@ -24,4 +25,14 @@
     align-items: center;
     justify-content: center;
     text-align: center;
+}
+
+.products-container > input{
+    width: 100%;
+    max-width: 100rem;
+    height: 5rem;
+    border-style: border-box;
+    padding: 2rem;
+    font-size: 1.5rem;
+    border: 0.1rem solid black;
 }
