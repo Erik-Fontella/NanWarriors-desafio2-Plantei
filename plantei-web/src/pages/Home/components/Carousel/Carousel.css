@@ -43,3 +43,12 @@
         margin-left: 0;
     }
 }
+
+
+
+@media (min-width: 1025px) and (max-width: 1731px){
+    .carousel-container{
+        margin-left: 0;
+        padding: 5%;
+    }
+}
