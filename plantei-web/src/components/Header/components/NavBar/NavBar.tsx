@@ -14,7 +14,7 @@ const NavBar = () => {
           <Link to="/register" className={location.pathname === '/register' ? 'active' : ''}>Register</Link>
         </li>
         <li className="li-header">
-          <Link to="/plants" className={location.pathname === '/plants' ? 'active' : ''}>Products</Link>
+          <Link to="/products" className={location.pathname === '/products' ? 'active' : ''}>Products</Link>
         </li>
         <li className="li-header">
           <Link to="/about-us" className={location.pathname === '/about-us' ? 'active' : ''}>About us</Link>

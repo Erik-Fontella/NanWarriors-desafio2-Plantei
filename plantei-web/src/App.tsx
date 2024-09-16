@@ -32,8 +32,8 @@ function App() {
               </PrivateRoute>
             }
           />
-          <Route path="/plants" element={<Products />} />
-          <Route path="/plant/:id" element={<Product />} />
+          <Route path="/products" element={<Products />} />
+          <Route path="/product/:id" element={<Product />} />
           <Route path="/about-us" element={<Error />} />
           <Route path="/*" element={<Error />} />
           <Route path="/sign-in" element={<SignInPage />} />
