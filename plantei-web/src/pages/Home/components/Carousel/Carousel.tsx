@@ -5,8 +5,6 @@ import HomeCard from '@Components/HomeCard/HomeCard'
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css'; 
 import { Plant } from "@Types/Plant";
-import { Link } from "react-router-dom";
-
 interface CarouselProps{
   plants: Plant[],
   promo: boolean,
@@ -38,14 +36,15 @@ const Carousel: React.FC<CarouselProps> = (props) => {
         >
           {props.plants.map((item, index) => (
             <SplideSlide key={index}>
-              <Link to={`/product/${item._id}`}><HomeCard 
+              <HomeCard 
                 key={item._id}
+                id={item._id}
                 name={item.name} 
                 price={item.price} 
                 discount={item.discountPercentage}
                 label={item.label} 
                 type={item.type} 
-              /></Link>
+              />
             </SplideSlide>
           ))}
         </Splide>

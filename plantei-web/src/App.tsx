@@ -10,6 +10,7 @@ import PrivateRoute from "@Routes/PrivateRoute";
 import SignInPage from "@Components/SignIn/SignIn";
 import Product from "@Pages/Product/Product";
 import ScrollToTop from "@Components/ScrollToTop/ScrollToTop";
+import Products from "@Pages/Products/Products";
 
 const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
 function App() {
@@ -31,7 +32,7 @@ function App() {
               </PrivateRoute>
             }
           />
-          <Route path="/products" element={<Error />} />
+          <Route path="/products" element={<Products />} />
           <Route path="/product/:id" element={<Product />} />
           <Route path="/about-us" element={<Error />} />
           <Route path="/*" element={<Error />} />

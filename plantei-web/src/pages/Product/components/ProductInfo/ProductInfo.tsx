@@ -23,20 +23,33 @@ const ProductInfo: React.FC<ProductInfoProps> = (props) => {
 
   const productFeatures = formatFeaturesToList(props.plant?.features)
 
+
+  const handlePrice = (price: number, discount: number) => {
+    return (price * (1 - (discount/100))).toFixed(2);
+  }
+
   return (
     <div className='product-info'>
         <h2>{props.plant?.name}</h2>
         <h3>{props.plant?.subtitle}</h3>
-        <div>
+        <div className='product-tags'>
           {props.plant && <LabelTag name={props.plant.label}/>}
           {props.plant && <LabelTag name={props.plant.type}/>}
         </div>
-        <h4>${props.plant?.price}</h4>
+        <div className='product-price'>
+          {props.plant?.discountPercentage && props.plant?.discountPercentage > 0 ? (
+            <h4>${handlePrice(props.plant.price, props.plant.discountPercentage)}</h4>
+          ) : (
+            <h4>${props.plant?.price.toFixed(2)}</h4>
+          )}
+          
+          {props.plant?.discountPercentage && props.plant?.discountPercentage > 0 && <h4>${props.plant?.price.toFixed(2)}</h4>}
+        </div>
         <button>Check out</button>
         <h5>Features</h5>
         <ul>
-          {productFeatures.map((item) => (
-            <li>{item}</li>
+          {productFeatures.map((item, index) => (
+            <li key={index}>{item}</li>
           ))}
         </ul>
         <h5>Description</h5>

@@ -6,7 +6,7 @@ const Error = () => {
   const navigate = useNavigate();
 
   const voltar = () => {
-    navigate(-1); 
+    navigate('/'); 
   };
 
   return (

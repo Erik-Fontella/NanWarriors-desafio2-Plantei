@@ -15,16 +15,16 @@ const Product = () => {
   useEffect(() => {
     const fetchPlants = async () => {
       try {
-        const response = await axios.get('http://localhost:3333/plants');
+        const response = await axios.get(`http://localhost:3333/plants/${id}`);
         if (id) {
-          const foundPlant = response.data.find((item: Plant) => item._id === Number(id));
-          setPlant(foundPlant || null);
+          setPlant(response.data || null);
         } else {
           setPlant(null);
         }
         setIsLoading(false);
       } catch (err) {
         console.log(err);
+        setIsLoading(false);
       }
     };
 
