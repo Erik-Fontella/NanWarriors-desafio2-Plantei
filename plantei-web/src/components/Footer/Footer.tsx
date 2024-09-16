@@ -1,6 +1,7 @@
 import "./Footer.css";
 import ImgLogo from "@Assets/footer/LogoFooter.svg";
 import ImgBgFooter from "@Assets/footer/footerBackground.png";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -16,40 +17,42 @@ const Footer = () => {
           <div className="footer-container-links">
             <div className="footer-links">
               <p>Links</p>
-              <ul>
-                <li>
-                  <a href="#">About us</a>
-                </li>
-                <li>
-                  <a href="#">Products</a>
-                </li>
-                <li>
-                  <a href="#">Blogs</a>
-                </li>
+              <ul className="ul-footer">
+                <Link to="/about-us">
+                  <li className="li-footer">About us</li>
+                </Link>
+                <Link to="/products">
+                  <li className="li-footer">Products</li>
+                </Link>
+                <Link to="/blogs">
+                  <li className="li-footer">Blogs</li>
+                </Link>
               </ul>
             </div>
             <div className="footer-links">
               <p>Community</p>
-              <ul>
-                <li>
-                  <a href="#">About us</a>
-                </li>
-                <li>
-                  <a href="#">Products</a>
-                </li>
-                <li>
-                  <a href="#">Blogs</a>
-                </li>
+              <ul className="ul-footer">
+                <Link to="/about-us">
+                  <li className="li-footer">About us</li>
+                </Link>
+                <Link to="/products">
+                  <li className="li-footer">Products</li>
+                </Link>
+                <Link to="/blogs">
+                  <li className="li-footer">Blogs</li>
+                </Link>
               </ul>
             </div>
           </div>
         </div>
-        <div className="footer-copryght">
+        <div className="footer-copyright">
           <div className="footer-row">
+          <Link to="/">
             <img src={ImgLogo} alt="Logo plant peace" />
+            </Link>
             <div>
-            <p> Compassinhos ©. All rights</p>
-            <p>reserved.</p>
+              <p> Compassinhos ©. All rights</p>
+              <p>reserved.</p>
             </div>
           </div>
         </div>
