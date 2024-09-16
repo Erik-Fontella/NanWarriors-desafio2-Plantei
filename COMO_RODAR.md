@@ -18,6 +18,7 @@ npm install
 ```
 
 #### Configure o arquivo .env para ambas as partes do projeto com as credenciais do banco de dados e Clerk.
+- [Link para arquivos](https://docs.google.com/document/d/1hTimkgO-keWAWEtm5m2aHwBRedqxXW8Xosa-2coShX4/edit?usp=sharing)
 
 # Para rodar o projeto
 ```
