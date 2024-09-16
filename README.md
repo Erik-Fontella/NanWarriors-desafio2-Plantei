@@ -1,92 +1,73 @@
 # Nan Warriors
+## Plantei - Desafio 2
+
+Este projeto é parte de um desafio para recriar um site de uma loja fictícia de plantas utilizando React, com backend para persistência de dados e autenticação de usuários.
 ##### ![NanWarriors](https://img.shields.io/badge/NaN-Warriors-purple?style=plastic)
 
+## Documentação
 
-## Índice
+- [Guia de Workflow e Git](./WORKFLOW.md)
+- [Como Rodar o Projeto](./COMO_RODAR.md)
 
-- [Workflow](#workflow)
-- [Convenções de Branch](#convenções-de-branch)
-- [Convenções de Commit](#convenções-de-commit)
-- [Como Contribuir](#como-contribuir)
 
-## Workflow
+## Tabela de Conteúdos
+- [Visão Geral](#visão-geral)
+- [Requisitos](#requisitos)
+- [Tecnologias Usadas](#tecnologias-usadas)
+- [Instalação e Configuração](#instalação-e-configuração)
+- [Como Usar](#como-usar)
 
-Este projeto utiliza um modelo de branching que combina práticas do Gitflow com um foco em integração contínua e revisões de código. O fluxo de trabalho é estruturado da seguinte forma:
+## Visão Geral
 
-1. **Branch `main`**:
-   - Contém o código de produção.
-   - É atualizada uma vez por semana ou quando houver atualizações significativas.
-   - Merges para a `main` são feitos a partir da `develop` após testes completos.
+A aplicação recria um site de uma loja fictícia de plantas. Ela contém funcionalidades como:
+- Autenticação de usuários usando Clerk.
+- Carrosséis para exibição de plantas, com seções como "Plants in Sale".
+- Registro e renderização de plantas em tempo real, usando formulário com validação.
+- Criação de páginas detalhadas para produtos.
+- Página "About Us" sobre os desenvolvedores.
+- Responsividade em todas as páginas.
+- Backend com API para persistência de dados.
 
-2. **Branch `develop`**:
-   - Serve como a branch principal de desenvolvimento.
-   - Todas as novas funcionalidades e correções são integradas aqui.
-   - Após a estabilização, a `develop` é mergeada na `main`.
+## Requisitos
 
-3. **Branches de Feature e Correção**:
-   - Cada nova funcionalidade ou correção de bug é desenvolvida em uma branch separada, criada a partir da `develop`.
-   - Nomes seguem a convenção `feature/nome-da-feature` ou `bugfix/nome-do-bug`.
-   - Merges para a `develop` são realizados via Pull Requests (PRs) no GitHub.
+### Requisitos Obrigatórios
+- Uso de **React** com **TypeScript**.
+- Autenticação com **Clerk** e exibição de ícone de perfil no header.
+- Implementação de rotas com **React Router**, incluindo rotas protegidas.
+- Persistência de dados para plantas (GET e POST).
+- Validação de todos os campos do formulário de registro.
+- Renderização em tempo real das plantas na página inicial.
+- Cálculo e exibição de preços com desconto, se aplicável.
 
-### Fluxo de Trabalho Resumido:
+### Requisitos Opcionais
+- Efeitos de hover nos elementos.
+- Criação de página "Products" para listar todas as plantas.
+- Página de erro criativa.
+- Input de imagem no formulário de registro de plantas, com salvamento da imagem.
+- Possíveis implementações sugeridas após os requisitos obrigatórios.
 
-- Crie uma branch de feature ou correção a partir da `develop`.
-- Desenvolva a funcionalidade ou correção.
-- Abra um PR para integrar a feature ou correção na `develop`.
-- Após a aprovação e merge na `develop`, a branch de feature ou correção pode ser deletada.
-- A `main` é atualizada periodicamente com as mudanças da `develop`.
+## Tecnologias Usadas
 
-## Convenções de Branch
+- [React](https://reactjs.org/) com **TypeScript**
+- [Clerk](https://clerk.com/) para autenticação
+- [React Router](https://reactrouter.com/en/main) para rotas
+- [Splide](https://splidejs.com/) para o carrossel
+- [Node.js](https://nodejs.org/) e [Express](https://expressjs.com/) para o backend (API)
+- [MongoDB](https://www.mongodb.com/) para banco de dados
 
-Adotamos as seguintes convenções para nomeação de branches:
+## Instalação e Configuração
 
-- **`main`**: Código de produção estável.
-- **`develop`**: Integração de funcionalidades e correções em andamento.
-- **Feature e Bugfix Branches**:
-  - Criadas para o desenvolvimento de novas funcionalidades ou correções de bugs.
-  - Naming convention: 
-    - `feature/nome-da-feature`
-    - `bugfix/nome-do-bug`
-  - Exemplo: `feature/adicionar-autenticacao` ou `bugfix/corrigir-login`.
+### Pré-requisitos
+- Node.js e npm instalados na máquina.
 
-## Convenções de Commit
+### Como Rodar
+- [Como Rodar o Projeto](./COMO_RODAR.md)
 
-Para manter um histórico de commits claro e útil, seguimos a convenção abaixo:
+## Como Usar
+- Acesse a aplicação no navegador em http://localhost:(numero da porta).
+- Faça login com sua conta google.
+- Adicione plantas pelo formulário e veja a renderização em tempo real.
 
-### **Formato do Commit**:
-- tipo: breve descrição
-
-### **Tipos de Commit**:
-- `feat`: Introdução de uma nova funcionalidade.
-- `fix`: Correção de um bug.
-- `docs`: Alterações na documentação.
-- `style`: Mudanças de formatação, sem alteração de código (espaços, vírgulas, etc.).
-- `refactor`: Alteração de código que não corrige bugs nem adiciona funcionalidades.
-- `test`: Adição ou correção de testes.
-- `chore`: Tarefas de manutenção ou mudanças que não alteram o código de produção.
-
-- **Exemplos**:
-- `feat: adicionar autenticação ao sistema`
-- `fix: corrigir erro de validação no formulário de login`
-- `docs: atualizar README com instruções de instalação`
-
-## Como Contribuir
-
-1. Faça um fork do repositório.
-2. Crie uma branch para sua feature ou correção (`git checkout -b feature/nome-da-feature` ou `git checkout -b bugfix/nome-do-bug`).
-3. Commit suas alterações (`git commit -m 'feat: adicionar nova funcionalidade'`).
-4. Faça um push para a branch (`git push origin feature/nome-da-feature` ou `git push origin bugfix/nome-do-bug`).
-5. Abra um Pull Request no GitHub.
-
-## Ferramentas e Recursos
-
-- **Ferramenta de Gerenciamento de Projeto:** ![GitHub](https://img.shields.io/badge/GitHub-000000.svg?style=for-the-badge&logo=github&logoColor=white)
-
-- **Ferramenta de Comunicação:** ![Microsoft Teams](https://img.shields.io/badge/Microsoft_Teams-000000.svg?style=for-the-badge&logo=microsoft-teams&logoColor=white)
-
-- **Sistema de Controle de Versão:** ![GIT](https://img.shields.io/badge/git-000000.svg?style=for-the-badge&logo=git&logoColor=white)
-
-- **Edição do Código-Fonte:** ![Visual Studio Code](https://img.shields.io/badge/VSCODE-000?style=for-the-badge&logo=visual-studio-code)
 
 ![NanWarrios](https://img.shields.io/badge/NaN-Warriors-lightblue?style=plastic)
 
