@@ -3,6 +3,18 @@
     height: 90.2rem;
     display: flex;
     background-color: #F0F1EE;
+    justify-content: center;
+}
+
+.green-side-container{
+    width: 100vw;
+    height: 90.2rem;
+    display: flex;
+    background-color: #F0F1EE;
+    justify-content: space-between;
+    max-width: 173.2rem;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 #left-side{
